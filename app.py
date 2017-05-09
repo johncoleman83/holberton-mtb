@@ -6,6 +6,7 @@ import tweepy
 import multiprocessing
 import os
 import cv2
+import time
 from flask import Flask, render_template, request, jsonify, Markup
 from werkzeug import secure_filename
 from time import sleep
@@ -40,6 +41,13 @@ def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+
+# random string generator
+def add_date(filename):
+    extension = filename[-4:]
+    prefix = filename[:-4]
+    thedate = time.strftime("%d-%m-%y--%H:%M:%S")
+    return "{:}{:}{:}".format(prefix, thedate, extension)
 
 # translation to ascii or leet
 
@@ -130,6 +138,7 @@ def reset_tweet():
 
 @app.route('/')
 def index():
+    reset_tweet()
     return render_template('index.html', newstring="none")
 
 
@@ -171,6 +180,7 @@ def features():
 @app.route('/selfie', methods=['GET', 'POST'])
 def selfie():
     if request.method == 'GET':
+        reset_tweet()
         return render_template('selfie.html')
     if request.method == 'POST':
         try:
@@ -180,6 +190,7 @@ def selfie():
                     global filename
                     filename = secure_filename(file.filename)
                     filename = os.path.join(UPLOAD_FOLDER, filename)
+                    filename = add_date(filename)
                     file.save(filename)
                     global TWEET
                     TWEET[0] = True
