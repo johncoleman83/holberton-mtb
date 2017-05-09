@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+	{% if message == "fprofanity" %}
+		<article class="failure">
+		  <p>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><br>
+			unsuccessful <i class="fa fa-frown-o" aria-hidden="true"></i>
+		  </p>
+		  <p>please don't use profanity<br>
+		  <img src="/static/images/censor.gif" /></p>
+	{% elif message == "ftweepy" %}
+		<article class="failure">
+		  <p>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><br>
+			unsuccessful <i class="fa fa-frown-o" aria-hidden="true"></i>
+		  </p>
+		  <p style="font-size:18px;">
+			your tweet failed possibly to these reasons:<br>
+			is the file type allowed?<br>
+			are you following twitter's API rules?<br>
+			is this a repeated tweet?<br>
+			did you reach your max tweets?<br>
+			is your status update more than 140 characters?<br>
+		  </p>
+	{% elif message == "fprocedure"  %}
+		<article class="failure">
+		  <p>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+			<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><br>
+			unsuccessful <i class="fa fa-frown-o" aria-hidden="true"></i>
+		  </p>
+		  <p style="font-size:18px;">
+			please follow procedure<br>
+			<img src="/static/images/mistake.gif" /></p>
+	{% endif %}
+		</article>
+</main>
+	  <footer>
+		<ul>
+		  <a href="/">
+			<li><i class="fa fa-home" aria-hidden="true"></i><br>home</li>
+		  </a>
+		  <a href="/selfie">
+			<li><i class="fa fa-camera" aria-hidden="true"></i><br>selfie</li>
+		  </a>
+		  <a href="/status">
+			<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>status</li>
+		  </a>
+		  <a href="/tweet">
+			<li><i class="fa fa-twitter" aria-hidden="true"></i><br>tweet</li>
+		  </a>
+		  <a href="/failure" class="activelink">
+			<li><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><br>failure</li>
+		  </a>
+		</ul>
+		<div id="toolbox-disclaimer">
+		  *participation requires compliance with
+		  <a href="https://support.twitter.com/articles/18311"
+			 target="_blank">"The Twitter Rules"</a>.
+		</div>
+	  </footer>
+{% endblock %}

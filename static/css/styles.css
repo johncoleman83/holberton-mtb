@@ -133,7 +133,7 @@ header {
 	flex: 1;
 	position: relative;
 	background: #fff;
-	padding: 6% 0;
+	padding: 8% 0;
 	background-image: url(/static/images/HBTN-Borderless-CMYK-Logo-Horizontal-Color-Black@1200ppi.png);
 	background-size: 40%;
 	background-position-x: 5%;
@@ -164,7 +164,7 @@ footer ul {
 	align-items: stretch;
 	justify-content: space-between;
 	width: 100%;
-	margin: 0;
+	margin: 0 0 0 15px;
 	padding: 0;
 }
 
