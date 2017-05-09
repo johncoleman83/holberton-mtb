@@ -42,7 +42,7 @@ def allowed_file(filename):
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-# random string generator
+# adds date to input image file
 def add_date(filename):
     extension = filename[-4:]
     prefix = filename[:-4]

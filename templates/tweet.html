@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
 <article>
-  {% if tweetvar %}
-  <p id="tweet-status">{{ tweetvar }}</p>
-  {% endif %}
-  {% if image %}
-  {{ image }}
-  {% endif %}
   <form action="/tweet" method="POST" enctype="multipart/form-data">
 	<input type="submit"
 		   name="action"
 		   value="&#xf099 Tweet"
 		   class="tweetbutton">
   </form>
+  {% if tweetvar %}
+  <p id="tweet-status">{{ tweetvar }}</p>
+  {% endif %}
+  {% if image %}
+  {{ image }}
+  {% endif %}
   		<div id="toolbox-disclaimer">
 		  *participation requires compliance with
 		  <a href="https://support.twitter.com/articles/18311"
