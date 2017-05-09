@@ -8,7 +8,7 @@
 			unsuccessful <i class="fa fa-frown-o" aria-hidden="true"></i>
 		  </p>
 		  <p>please don't use profanity<br>
-		  <img src="/static/images/censor.gif" /></p>
+		  <img class="gif" src="/static/images/censor.gif" /></p>
 	{% elif message == "ftweepy" %}
 		<article class="failure">
 		  <p>
@@ -23,6 +23,7 @@
 			is this a repeated tweet?<br>
 			did you reach your max tweets?<br>
 			is your status update more than 140 characters?<br>
+			<img class="gif" src="/static/images/mistake.gif" /></p>
 		  </p>
 	{% elif message == "fprocedure"  %}
 		<article class="failure">
@@ -33,7 +34,7 @@
 		  </p>
 		  <p style="font-size:18px;">
 			please follow procedure<br>
-			<img src="/static/images/mistake.gif" /></p>
+			<img class="gif" src="/static/images/mistake.gif" /></p>
 	{% endif %}
 		</article>
 </main>
