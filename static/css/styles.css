@@ -1,4 +1,4 @@
-/*! styles.css v2.0.5 */
+/*! styles.css v2.0.6 */
 @charset "UTF-8";
 
 /* ================
@@ -135,8 +135,9 @@ header {
 	background: #fff;
 	padding: 6% 0;
 	background-image: url(/static/images/HBTN-Borderless-CMYK-Logo-Horizontal-Color-Black@1200ppi.png);
-	background-size: 60%;
-	background-position: center;
+	background-size: 40%;
+	background-position-x: 5%;
+	background-position-y: 5%;
 	background-repeat: no-repeat;
 	background-color: transparent;
 }
@@ -151,6 +152,7 @@ header {
 .activelink {
 	padding-top: 0px;
 	font-size: 56px;
+	color: #00b0aa;
 }
 
 footer ul {
@@ -173,6 +175,8 @@ footer li {
 	list-style-type: none;
 	text-align: center;
 	max-width: 150px;
+	text-align: center;
+	margin: 0 auto;
 }
 
 footer li:hover {
@@ -380,64 +384,10 @@ select {
 
 /* =================
      MEDIA QUERIES
-   ================= 
-
-@media (max-width: 900px) {
-
-	#features-app {
-		max-width: 74%;
-	}
-
-	#features-outer {
-		max-width: 90%;
-	}
-
-	#feature-form {
-		margin: 0 0;
-		font-size: 16px;
-	}
-
-	#rules {
-		width: 60%;
-	}
-
-	#toolbox-split {
-		flex-direction: column;
-	}
-
-	#toolbox-left, #toolbox-right {
-		text-align: center;
-		padding: 0 0;
-		width: 100%;
-	}
-
-}
+   ================= */
 
 
 @media (max-width: 600px) {
-
-	#selfie-button {
-		display: none;
-	}
-
-	#translation {
-		margin: 0% 2%;
-	}
-
-	#features-outer {
-	    top: 5px;
-		position: relative;
-		max-width: 95%;
-		margin-top: 5px;
-	}
-
-	.hidden {
-		display: none;
-	}
-
-	.visible {
-		display: unset;
-	}
 
 	html,
 	body,
@@ -454,9 +404,20 @@ select {
 		background-position-x: -200px;
 	}
 
+	.activelink {
+		font-size: 20px;
+	}
+
+	footer ul a {
+		width: 100%;
+		font-size: 20px;
+		max-width: 75%;
+		text-align: center;
+	}
+
 	aside {
 		box-shadow: 0px 0px 3px 2px #353535;
 	}
 
 }
-*/
+B
