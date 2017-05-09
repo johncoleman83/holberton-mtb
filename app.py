@@ -119,6 +119,12 @@ def follow_followers():
                 print(e.reason)
                 pass
 
+
+def reset_tweet():
+    global TWEET
+    TWEET = [False, False]
+
+
 # begin flask template rendering
 
 
@@ -138,7 +144,7 @@ def features():
         xfollowers = int(request.form['xfollowers']
                          if request.form['xfollowers'] else 3)
         if not censor(searchterms):
-            return render_template('confirmstatus.html', tweetvar='profanity')
+            return render_template('failure.html', message='fprofanity')
         try:
             if request.form['retweet']:
                 if retweet_follow(searchterms) is not True:
@@ -157,9 +163,9 @@ def features():
         except:
             failcount += 1
         if failcount >= 5:
-            return render_template('confirmfeature.html', status='failure')
+            return render_template('failure.html', failure='ftweepy')
         else:
-            return render_template('confirmfeature.html', status='success')
+            return render_template('confirmfeatures.html', status='success')
 
 
 @app.route('/selfie', methods=['GET', 'POST'])
@@ -187,25 +193,30 @@ def status():
     if request.method == 'GET':
         return render_template('status.html')
     if request.method == 'POST':
+        global TWEET
+        if TWEET[0] == False:
+            reset_tweet()
+            return render_template('failure.html', message='fprocedure')
         global tweetvar
         tweetvar = request.form['tweet']
         if not censor(tweetvar):
-            return render_template('confirmstatus.html', tweetvar='profanity')
+            reset_tweet()
+            return render_template('failure.html', message='fprofanity')
         if request.form['translate'] == "ascii":
             tweetvar = translate(tweetvar, 'a')
         elif request.form['translate'] == "leet":
             tweetvar = translate(tweetvar, 'l')
         imagemarkup =  Markup("<img id='tweet-image' src='{:}' />"
                               .format(filename[1:]))
-        global TWEET
         TWEET[1] = True
         return render_template('tweet.html', tweetvar=tweetvar,
                                image=imagemarkup)
 
 
-@app.route('/confirmstatus')
-def confirmstatus():
-    return render_template('confirmstatus.html', tweetvar='failure')
+@app.route('/failure')
+def failure():
+    reset_tweet()
+    return render_template('failure.html')
 
 
 @app.route('/tweet', methods=['GET', 'POST'])
@@ -220,17 +231,13 @@ def tweet():
                 sleep(5)
                 return render_template('confirm.html')
         else:
-            return render_template('confirmstatus.html', tweetvar='failure')
+            reset_tweet()
+            return render_template('failure.html', message='fprocedure')
 
 
 @app.route('/confirm')
 def confirm():
     return render_template('confirm.html')
-
-
-@app.route('/confirmfeature')
-def confirmfeature():
-    return render_template('confirmfeature.html', status='failure')
 
 
 @app.route('/are-no-one')
