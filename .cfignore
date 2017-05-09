@@ -1,0 +1,7 @@
+.gitignore
+vcap-local.json
+credentials-djc.py
+*~
+*.DS_Store
+*.pyc
+__pycache__
