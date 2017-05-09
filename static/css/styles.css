@@ -141,12 +141,12 @@ article {
 
 header {
 	flex: 1;
-	max-height: 4%;
+	max-height: 25%;
 	position: relative;
 	background: #fff;
-	padding: 8% 0;
+	padding: 0;
 	background-image: url(/static/images/HBTN-Borderless-CMYK-Logo-Horizontal-Color-Black@1200ppi.png);
-	background-size: 40%;
+	background-size: 35%;
 	background-position-x: 5%;
 	background-position-y: 5%;
 	background-repeat: no-repeat;
@@ -398,6 +398,11 @@ select {
 
 
 @media (max-width: 600px) {
+
+
+	header {
+		background-size: 90%;
+	}
 
 	html,
 	body,

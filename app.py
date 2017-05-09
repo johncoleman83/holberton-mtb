@@ -238,9 +238,16 @@ def tweet():
         if TWEET[0] and TWEET[1]:
             global tweetvar
             tweetvar = tweetvar + TWEET_APPEND_TEXT
-            if tweet_image(filename, tweetvar):
-                sleep(5)
-                return render_template('confirm.html')
+            try:
+                if tweet_image(filename, tweetvar):
+                    sleep(5)
+                    return render_template('confirm.html')
+                else:
+                    reset_tweet()
+                    return render_template('failure.html', message='ftweepy')
+            except:
+                reset_tweet()
+                return render_template('failure.html', message='ftweepy')
         else:
             reset_tweet()
             return render_template('failure.html', message='fprocedure')
