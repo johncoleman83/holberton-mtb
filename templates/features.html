@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<article>
+	<div id="features-app">
+		<form method="POST" id="featureform" enctype="multipart/form-data">
+		  <input type="checkbox"
+				 name="retweet"
+				 > retweet & follow<br>
+		  <input type="checkbox"
+				 name="followfollowers"
+				 > follow followers<br>
+		  <input type="checkbox"
+				 name="followx"
+				 > follow X more<br>
+		  <input type="number"
+				 name="xfollowers"
+				 min="1"
+				 max="20"
+				 step="1"
+				 title="min: 1, max: 20 more followers">
+		  <span style="font-size: 15px;">  :X users</span><br>
+		  <strong>Search Terms:</strong><br>
+		  <input type="text"
+				 name="searchterms"
+				 id="search-input"
+				 placeholder="used with all selections"
+				 maxlength="25"
+				 title="maximum: 140 characters"
+				 ><br>
+		  <span style="font-size:15px">
+			(default: '#diversity')</span><br>
+		  <input type="submit" value="&#xf099 Automate" class="tweetbutton">
+		</form>
+	</div>
+</article>
+</main>
+<footer>
+  <p>by:
+	<a href="http://www.davidjohncoleman.com/" target="_blank">David John Coleman II</a>
+	<a href="https://twitter.com/djohncoleman" target="_blank">
+		<i class="fa fa-twitter" aria-hidden="true"></i></a>
+	<a href="https://www.facebook.com/johncoleman83" target="_blank">
+		<i class="fa fa-facebook" aria-hidden="true"></i></a>
+	<a href="https://github.com/johncoleman83/" target="_blank">
+		<i class="fa fa-github" aria-hidden="true"></i></a>
+	<a href="https://www.linkedin.com/in/davidjohncoleman/" target="_blank">
+		<i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  </p>
+</footer>
+{% endblock %}

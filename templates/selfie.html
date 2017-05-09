@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<article>
+  <div id="tweet-toolbox">
+	<form action="/selfie" method="POST" enctype="multipart/form-data">
+	  <input type="file"
+			 name="file"
+			 accept=".png,.jpg,.jpeg,.gif"
+			 class="upload-image"
+			 required
+			 ><br>
+	  <input type="submit"
+			 name="action"
+			 value="&#xf00c confirm"
+			 class="tweetbutton">
+	</form>
+  </div>
+</article>
+	  </main>
+	  <footer>
+		<ul>
+		  <a href="/">
+			<li><i class="fa fa-home" aria-hidden="true"></i><br>home</li>
+		  </a>
+		  <a href="/selfie" class="activelink">
+			<li><i class="fa fa-camera" aria-hidden="true"></i><br>selfie</li>
+		  </a>
+		  <a href="/status">
+			<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>status</li>
+		  </a>
+		  <a href="/tweet">
+			<li><i class="fa fa-twitter" aria-hidden="true"></i><br>tweet</li>
+		  </a>
+		  <a href="/confirm">
+			<li><i class="fa fa-check" aria-hidden="true"></i><br>confirm</li>
+		  </a>
+		</ul>
+		<div id="toolbox-disclaimer">
+		  *participation requires compliance with
+		  <a href="https://support.twitter.com/articles/18311"
+			 target="_blank">"The Twitter Rules"</a>.
+		</div>
+	  </footer>
+{% endblock %}

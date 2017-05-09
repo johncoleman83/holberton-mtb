@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<article>
+		  <a class="twitter-grid" data-link-color="#2B7BB9"
+			 href="https://twitter.com/djohncoleman">Tweets by djohncoleman</a>
+		  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</article>
+	  </main>
+	  <footer>
+		<ul>
+		  <a href="/">
+			<li><i class="fa fa-home" aria-hidden="true"></i><br>home</li>
+		  </a>
+		  <a href="/selfie">
+			<li><i class="fa fa-camera" aria-hidden="true"></i><br>selfie</li>
+		  </a>
+		  <a href="/status">
+			<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>status</li>
+		  </a>
+		  <a href="/tweet">
+			<li><i class="fa fa-twitter" aria-hidden="true"></i><br>tweet</li>
+		  </a>
+		  <a href="/confirm" class="activelink">
+			<li><i class="fa fa-check" aria-hidden="true"></i><br>confirm</li>
+		  </a>
+		</ul>
+		<div id="toolbox-disclaimer">
+		  *participation requires compliance with
+		  <a href="https://support.twitter.com/articles/18311"
+			 target="_blank">"The Twitter Rules"</a>.
+		</div>
+	  </footer>
+{% endblock %}

@@ -1,0 +1,5 @@
+---
+applications:
+ - name: holberton-mtb
+   random-route: true
+   memory: 128M
