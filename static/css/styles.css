@@ -5,6 +5,7 @@
    HTML BODY FORMAT
    ================ */
 
+
 html,
 body {
 	height: 100%;
@@ -14,9 +15,10 @@ body {
 html,
 body,
 article,
-aside,
 main,
 menu {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
 	position: relative;
 	display: block;
 	margin: 0;
@@ -24,6 +26,7 @@ menu {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	height: 100%;
 }
 
 body {
@@ -131,6 +134,7 @@ article {
 
 header {
 	flex: 1;
+	max-height: 13%;
 	position: relative;
 	background: #fff;
 	padding: 8% 0;
@@ -159,7 +163,6 @@ footer ul {
 	flex: 1;
 	display: flex;
 	flex-direction: row;
-	flex-flow: row wrap;
 	flex: auto;
 	align-items: stretch;
 	justify-content: space-between;
@@ -217,23 +220,23 @@ footer ul a {
 }
 
 .upload-image::before {
-	content: 'Take Selfie';
+	content: 'upload image';
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
 	color: #fff;
 	display: inline-block;
 	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
 	border: 1px solid #696969;
 	border-radius: 3px;
-	margin-top: 30%;
+	margin-top: 40%;
 	margin-bottom: 10%;
-	padding: 4px;
+	padding: 2px;
 	outline: none;
 	white-space: nowrap;
 	-webkit-user-select: none;
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 22px;
 }
 
 .upload-image:hover::before {
@@ -259,8 +262,8 @@ footer ul a {
 }
 
 #tweet-toolbox {
-	padding: 5% 5%;
-	margin: 1% auto;
+	padding: 0% 5%;
+	margin: 0% auto;
 	width: 80%;
 	text-align: center;
 }
@@ -391,17 +394,15 @@ select {
 
 	html,
 	body,
-	aside,
 	article {
 		-webkit-overflow-scrolling: touch;
 		overflow: scroll;
 		height: 100%;
+		position: relative;
 	}
 
 	main {
 		overflow: scroll;
-		background-size: 225%;
-		background-position-x: -200px;
 	}
 
 	.activelink {
@@ -409,9 +410,8 @@ select {
 	}
 
 	footer ul a {
-		width: 100%;
 		font-size: 20px;
-		max-width: 75%;
+		max-width: 20%;
 		text-align: center;
 	}
 
@@ -420,4 +420,3 @@ select {
 	}
 
 }
-B
