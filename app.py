@@ -25,6 +25,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 TWEET_APPEND_TEXT = " -tweeted at @holbertonschool"
+TWEET = [False, False]
 
 # flask integrations
 app = Flask(__name__)
@@ -174,6 +175,8 @@ def selfie():
                     filename = secure_filename(file.filename)
                     filename = os.path.join(UPLOAD_FOLDER, filename)
                     file.save(filename)
+                    global TWEET
+                    TWEET[0] = True
             return render_template('status.html')
         except:
             return render_template('selfie.html')
@@ -194,6 +197,8 @@ def status():
             tweetvar = translate(tweetvar, 'l')
         imagemarkup =  Markup("<img id='tweet-image' src='{:}' />"
                               .format(filename[1:]))
+        global TWEET
+        TWEET[1] = True
         return render_template('tweet.html', tweetvar=tweetvar,
                                image=imagemarkup)
 
@@ -208,11 +213,12 @@ def tweet():
     if request.method == 'GET':
         return render_template('tweet.html')
     if request.method == 'POST':
-        global tweetvar
-        tweetvar = tweetvar + TWEET_APPEND_TEXT
-        if tweet_image(filename, tweetvar):
-            sleep(5)
-            return render_template('confirm.html')
+        if TWEET[0] and TWEET[1]:
+            global tweetvar
+            tweetvar = tweetvar + TWEET_APPEND_TEXT
+            if tweet_image(filename, tweetvar):
+                sleep(5)
+                return render_template('confirm.html')
         else:
             return render_template('confirmstatus.html', tweetvar='failure')
 
