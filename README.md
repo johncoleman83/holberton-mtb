@@ -1,6 +1,6 @@
-# <img src="https://github.com/johncoleman83/mini-tweet-bot/blob/master/static/images/anonymousface.png" width="160" height="160" /> mini tweet bot
+# <img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/HBTN-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> mini tweet bot
 
-:a python application, for twitter automation with Cloud Foundry on IBM Bluemix
+:a python application [DEMO], for twitter automation with Cloud Foundry on IBM Bluemix
 
 ### python
 
