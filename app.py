@@ -171,10 +171,10 @@ def features():
                     failcount += 1
         except:
             failcount += 1
-        if failcount >= 5:
-            return render_template('failure.html', failure='ftweepy')
+        if failcount >= 3:
+            return render_template('failure.html', message='ftweepy')
         else:
-            return render_template('confirmfeatures.html', status='success')
+            return render_template('confirmfeature.html', status='success')
 
 
 @app.route('/selfie', methods=['GET', 'POST'])
@@ -222,6 +222,11 @@ def status():
         TWEET[1] = True
         return render_template('tweet.html', tweetvar=tweetvar,
                                image=imagemarkup)
+
+
+@app.route('/confirmfeature')
+def confirmfeatures():
+    return render_template('confirmfeature.html')
 
 
 @app.route('/failure')
