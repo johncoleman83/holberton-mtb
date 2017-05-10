@@ -139,7 +139,7 @@ def reset_tweet():
 @app.route('/')
 def index():
     reset_tweet()
-    return render_template('index.html', newstring="none")
+    return render_template('index.html')
 
 
 @app.route('/features', methods=['GET', 'POST'])
@@ -241,6 +241,7 @@ def tweet():
         return render_template('tweet.html')
     if request.method == 'POST':
         if TWEET[0] and TWEET[1]:
+            reset_tweet()
             global tweetvar
             tweetvar = tweetvar + TWEET_APPEND_TEXT
             try:
@@ -248,10 +249,8 @@ def tweet():
                     sleep(5)
                     return render_template('confirm.html')
                 else:
-                    reset_tweet()
                     return render_template('failure.html', message='ftweepy')
             except:
-                reset_tweet()
                 return render_template('failure.html', message='ftweepy')
         else:
             reset_tweet()
