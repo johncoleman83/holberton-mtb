@@ -52,7 +52,6 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *~
-static/uploads/*
 
 # Translations
 *.mo
