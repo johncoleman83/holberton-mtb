@@ -31,7 +31,7 @@ TWEET = [False, False]
 # flask integrations
 app = Flask(__name__)
 port = int(os.getenv('PORT', 8080))
-UPLOAD_FOLDER = './static/uploads'
+UPLOAD_FOLDER = './static/hope'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 

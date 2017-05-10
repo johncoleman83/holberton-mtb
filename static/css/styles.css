@@ -145,6 +145,7 @@ header {
 	position: relative;
 	background: #fff;
 	padding: 0;
+	margin: 10px 0;
 	background-image: url(/static/images/HBTN-Borderless-CMYK-Logo-Horizontal-Color-Black@1200ppi.png);
 	background-size: 35%;
 	background-position-x: 5%;
@@ -174,8 +175,8 @@ footer ul {
 	align-items: stretch;
 	justify-content: space-between;
 	width: 100%;
-	margin: 0 0 0 15px;
 	padding: 0;
+	margin: 10px 0;
 }
 
 footer li {
@@ -206,8 +207,13 @@ footer ul a {
    ================== */
 
 #begin {
-	font-size: 75px;
-	margin: 10% 10%;
+	font-size: 50px;
+	margin: 5% 5%;
+}
+
+#home-info {
+	margin: 0 10%;
+	font-size: 32px;
 }
 
 
@@ -234,16 +240,16 @@ footer ul a {
 	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
 	border: 1px solid #696969;
 	border-radius: 3px;
-	margin-top: 40%;
-	margin-bottom: 10%;
-	padding: 2px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 30px;
 	outline: none;
 	white-space: nowrap;
 	-webkit-user-select: none;
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 22px;
+	font-size: 24px;
 }
 
 .upload-image:hover::before {
