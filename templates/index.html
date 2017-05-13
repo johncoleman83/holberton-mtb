@@ -1,29 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 <article>
-  <h1 id="begin"><a href="/selfie">begin</a></h1>
-	<p id="home-info">This is a demo app designed for an ipad or other
-	tablet sized device.  Please follow the steps in order; use both an
-	image and a status update.</p>
+  <form action="/"
+		method="POST"
+		enctype="multipart/form-data"
+		class="selfiearticle">
+	<input type="file"
+		   name="file"
+		   accept=".png,.jpg,.jpeg,.gif"
+		   required
+		   class="upload-image"
+		   onchange="this.form.submit()"
+		   ><br>
+  </form>
 </article>
-</main>
-	  <footer>
-		<ul>
-		  <a href="/" class="activelink">
-			<li><i class="fa fa-home" aria-hidden="true"></i><br>home</li>
-		  </a>
-		  <a href="/selfie">
-			<li><i class="fa fa-camera" aria-hidden="true"></i><br>selfie</li>
-		  </a>
-		  <a href="/status">
-			<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>status</li>
-		  </a>
-		  <a href="/tweet">
-			<li><i class="fa fa-twitter" aria-hidden="true"></i><br>tweet</li>
-		  </a>
-		  <a href="/confirm">
-			<li><i class="fa fa-check" aria-hidden="true"></i><br>confirm</li>
-		  </a>
-		</ul>
-	  </footer>
 {% endblock %}
