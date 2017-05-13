@@ -49,21 +49,6 @@ def add_date(filename):
     thedate = time.strftime("%d-%m-%y--%H:%M:%S")
     return "{:}{:}{:}".format(prefix, thedate, extension)
 
-# translation to ascii or leet
-
-
-def translate(tweetvar, c):
-    if c == 'a':
-        tweetvar = tweetvar.lower()
-        for key in ascii_dict:
-            if key in tweetvar:
-                tweetvar = tweetvar.replace(key, ascii_dict[key])
-    else:
-        for key in leet_dict:
-            if key in tweetvar:
-                tweetvar = tweetvar.replace(key, leet_dict[key])
-    return tweetvar
-
 
 # begin tweet functions here
 
@@ -128,18 +113,21 @@ def follow_followers():
                 pass
 
 
+#globals to keep track of user experiences
+def verify_tweet():
+    global TWEET
+    if TWEET[0] and TWEET[1]:
+        return True
+    else:
+        return False
+
+
 def reset_tweet():
     global TWEET
     TWEET = [False, False]
 
 
 # begin flask template rendering
-
-
-@app.route('/')
-def index():
-    reset_tweet()
-    return render_template('index.html')
 
 
 @app.route('/features', methods=['GET', 'POST'])
@@ -177,51 +165,58 @@ def features():
             return render_template('confirmfeature.html', status='success')
 
 
-@app.route('/selfie', methods=['GET', 'POST'])
-def selfie():
+@app.route('/', methods=['GET', 'POST'])
+def index():
     if request.method == 'GET':
         reset_tweet()
-        return render_template('selfie.html')
+        return render_template('index.html')
     if request.method == 'POST':
         try:
             if request.files['file']:
                 file = request.files['file']
                 if allowed_file(file.filename):
-                    global filename
-                    filename = secure_filename(file.filename)
-                    filename = os.path.join(UPLOAD_FOLDER, filename)
-                    filename = add_date(filename)
-                    file.save(filename)
+                    global imagefile
+                    imagefile = secure_filename(file.filename)
+                    imagefile = os.path.join(UPLOAD_FOLDER, imagefile)
+                    imagefile = add_date(imagefile)
+                    file.save(imagefile)
                     global TWEET
                     TWEET[0] = True
-            return render_template('status.html')
+                    imagemarkup =  Markup("<img id='tweet-image' src='{:}' />"
+                                          .format(imagefile[1:]))
+            return render_template('status.html', image=imagemarkup)
         except:
-            return render_template('selfie.html')
+            reset_tweet()
+            return render_template('index.html')
 
 
 @app.route('/status', methods=['GET', 'POST'])
 def status():
     if request.method == 'GET':
+        reset_tweet()
         return render_template('status.html')
     if request.method == 'POST':
-        global TWEET
-        if TWEET[0] == False:
-            reset_tweet()
-            return render_template('failure.html', message='fprocedure')
-        global tweetvar
-        tweetvar = request.form['tweet']
+        global TWEET, imagefile, tweetvar
+        if request.form['tweet']:
+            tweetvar = request.form['tweet']
+        TWEET[1] = True
         if not censor(tweetvar):
             reset_tweet()
             return render_template('failure.html', message='fprofanity')
-        if request.form['translate'] == "ascii":
-            tweetvar = translate(tweetvar, 'a')
-        elif request.form['translate'] == "leet":
-            tweetvar = translate(tweetvar, 'l')
-        imagemarkup =  Markup("<img id='tweet-image' src='{:}' />"
-                              .format(filename[1:]))
-        TWEET[1] = True
-        return render_template('tweet.html', tweetvar=tweetvar,
-                               image=imagemarkup)
+        tweetvar = tweetvar + TWEET_APPEND_TEXT
+        try:
+            if verify_tweet():
+                reset_tweet()
+                if tweet_image(imagefile, tweetvar):
+                    sleep(5)
+                    return render_template('confirm.html')
+                else:
+                    return render_template('failure.html', message='ftweepy')
+            else:
+                reset_tweet()
+                return render_template('failure.html', message='fprocedure')
+        except:
+            return render_template('failure.html', message='ftweepy')
 
 
 @app.route('/confirmfeature')
@@ -233,28 +228,6 @@ def confirmfeatures():
 def failure():
     reset_tweet()
     return render_template('failure.html')
-
-
-@app.route('/tweet', methods=['GET', 'POST'])
-def tweet():
-    if request.method == 'GET':
-        return render_template('tweet.html')
-    if request.method == 'POST':
-        if TWEET[0] and TWEET[1]:
-            reset_tweet()
-            global tweetvar
-            tweetvar = tweetvar + TWEET_APPEND_TEXT
-            try:
-                if tweet_image(filename, tweetvar):
-                    sleep(5)
-                    return render_template('confirm.html')
-                else:
-                    return render_template('failure.html', message='ftweepy')
-            except:
-                return render_template('failure.html', message='ftweepy')
-        else:
-            reset_tweet()
-            return render_template('failure.html', message='fprocedure')
 
 
 @app.route('/confirm')

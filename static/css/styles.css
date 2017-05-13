@@ -1,4 +1,4 @@
-/*! styles.css v2.0.8 */
+/*! styles.css v2.0.9 */
 @charset "UTF-8";
 
 /* ================
@@ -103,6 +103,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	flex: auto;
+	padding: 5% 5%;
 }
 
 aside {
@@ -113,9 +114,8 @@ aside {
 }
 
 article {
-	overflow-y: auto;
-	min-height: 400px;
 	flex: 1;
+	overflow-y: auto;
 	text-align: center;
 }
 
@@ -135,92 +135,19 @@ article {
 	margin: .5% 10%;
 }
 
-/* ==================
-        HEADER
-   ================== */
-
-header {
-	text-align: center;
-	flex: 0;
-	background: #fff;
-	padding: 0;
-	margin-top: 10px;
-}
-
-.header-image {
-	width: 50%;
-}
-
-/* ==================
-        FOOTER
-   ================== */
-
-
-.activelink {
-	padding-top: 0px;
-	font-size: 56px;
-	color: #00b0aa;
-}
-
-footer ul {
-	flex: 1;
-	display: flex;
-	flex-direction: row;
-	flex: auto;
-	align-items: stretch;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0;
-	margin: 10px 0;
-}
-
-footer li {
-	background: transparent;;
-	display: block;
-	flex: auto;
-	list-style-type: none;
-	text-align: center;
-	max-width: 150px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-footer li:hover {
-	background: transparent;
-}
-
-footer ul a {
-	padding-top: 6%;
-	flex: auto;
-	font-size: 24px;
-}
-
-
-
-/* ==================
-          HOME
-   ================== */
-
-#begin {
-	font-size: 50px;
-	margin: 5% 5%;
-}
-
-#home-info {
-	margin: 0 10%;
-	font-size: 32px;
-}
-
-
 
 /* ==================
          SELFIE
    ================== */
 
+.selfiearticle {
+	padding: 15% 5% 20% 5%;
+}
+
 
 .upload-image {
-	margin-left: 8%;
-    width: 250px;
+	margin: 5%;
+    width: 600px;
 }
 
 .upload-image::-webkit-file-upload-button {
@@ -228,15 +155,14 @@ footer ul a {
 }
 
 .upload-image::before {
-	content: 'upload image';
+	content: 'take a selfie';
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
 	color: #fff;
 	display: inline-block;
 	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
 	border: 1px solid #696969;
 	border-radius: 3px;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin: 0;
     padding: 30px;
 	outline: none;
 	white-space: nowrap;
@@ -244,7 +170,7 @@ footer ul a {
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 90px;
 }
 
 .upload-image:hover::before {
@@ -269,27 +195,6 @@ footer ul a {
 	font-size: 16pt;
 }
 
-#tweet-toolbox {
-	padding: 0% 5%;
-	margin: 0% auto;
-	width: 80%;
-	text-align: center;
-}
-
-#translation {
-	margin: 0% 20%;
-	padding: 1% 1%;
-	background: rgba(255, 255, 255, 0.9);
-	border: 1px groove #717171;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	box-shadow: 0px 0px 4px 0px #353535;
-	text-align: left;
-	font-size: 18px;
-    color: #00;
-}
-
 
 /* ==================
          STATUS
@@ -297,10 +202,10 @@ footer ul a {
 
 #tweet-input {
 	padding: 5px;
-	border: 0;
+	border: 1px solid #000;
 	border-radius: 3px;
 	box-shadow: inset 0px 0px 4px 0px #353535;
-	width: 100%;
+	width: 90%;
 	font-size: 36px;
 }
 
@@ -321,6 +226,28 @@ footer ul a {
 
 
 .tweetbutton:hover {
+	background: #2683a5;
+	cursor: pointer;
+}
+
+.retakebutton {
+	border-radius: 10px;
+	-webkit-appearance: none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background: #339dc3;
+	padding: 7px 14px;
+	font-weight: bold;
+	font-size: 36px;
+	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	color: #fff;
+	text-decoration: none;
+	border: 1px groove #339dc3;
+}
+
+
+.retakebutton:hover {
+	color: white;
 	background: #2683a5;
 	cursor: pointer;
 }
@@ -352,7 +279,7 @@ select {
 
 
 #tweet-image {
-	max-height: 250px;
+	max-height: 300px;
 }
 
 /* ================
@@ -369,7 +296,7 @@ select {
 
 #search-input {
 	padding: 5px;
-	border: 0;
+	border: 1px groove #717171;
 	border-radius: 3px;
 	box-shadow: inset 0px 0px 4px 0px #353535;
 	background-color: white;
@@ -385,7 +312,6 @@ select {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	box-shadow: 0px 0px 4px 0px #353535;
-	max-width: 50%;
 	float: right;
 	margin: 1% 1%;
 	padding: 1% 5%;
@@ -401,10 +327,6 @@ select {
 @media (max-width: 600px) {
 
 
-	header {
-		background-size: 90%;
-	}
-
 	html,
 	body,
 	article {
@@ -416,20 +338,6 @@ select {
 
 	main {
 		overflow: scroll;
-	}
-
-	.activelink {
-		font-size: 20px;
-	}
-
-	footer ul a {
-		font-size: 20px;
-		max-width: 20%;
-		text-align: center;
-	}
-
-	aside {
-		box-shadow: 0px 0px 3px 2px #353535;
 	}
 
 }
