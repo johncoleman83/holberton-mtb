@@ -3,7 +3,6 @@ app python mini tweet bot application
 takes user input and tweets to designated account
 """
 import tweepy
-import multiprocessing
 import os
 import cv2
 import time
