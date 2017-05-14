@@ -1,4 +1,4 @@
-/*! styles.css v2.0.9 */
+/*! styles.css v2.1.0 */
 @charset "UTF-8";
 
 /* ================
@@ -141,7 +141,7 @@ article {
    ================== */
 
 .selfiearticle {
-	padding: 15% 5% 20% 5%;
+	padding: 5% 5% 5% 5%;
 }
 
 
@@ -338,6 +338,14 @@ select {
 
 	main {
 		overflow: scroll;
+	}
+
+	.selfiearticle {
+		padding: 5% 5% 5% 5%;
+	}
+
+	.upload-image::before {
+		font-size: 35px;
 	}
 
 }
