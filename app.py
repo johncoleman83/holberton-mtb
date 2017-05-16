@@ -197,25 +197,25 @@ def status():
     if request.method == 'POST':
         global TWEET, imagefile, tweetvar
         if request.form['tweet']:
-            tweetvar = request.form['tweet']
-        TWEET[1] = True
-        if not censor(tweetvar):
-            reset_tweet()
-            return render_template('failure.html', message='fprofanity')
-        tweetvar = tweetvar + TWEET_APPEND_TEXT
-        try:
-            if verify_tweet():
+            tweetvar = request.form['tweet'] + TWEET_APPEND_TEXT
+            if not censor(tweetvar):
                 reset_tweet()
-                if tweet_image(imagefile, tweetvar):
-                    sleep(5)
-                    return render_template('confirm.html')
-                else:
-                    return render_template('failure.html', message='ftweepy')
-            else:
-                reset_tweet()
+                return render_template('failure.html', message='fprofanity')
+        else:
+            tweetvar = TWEET_APPEND_TEXT
+            if verify_tweet == False:
                 return render_template('failure.html', message='fprocedure')
-        except:
-            return render_template('failure.html', message='ftweepy')
+        TWEET[1] = True
+        if verify_tweet():
+            reset_tweet()
+            if tweet_image(imagefile, tweetvar):
+                sleep(5)
+                return render_template('confirm.html')
+            else:
+                return render_template('failure.html', message='ftweepy')
+        else:
+            reset_tweet()
+            return render_template('failure.html', message='fprocedure')
 
 
 @app.route('/confirmfeature')
