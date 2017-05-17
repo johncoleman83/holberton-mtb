@@ -92,6 +92,10 @@ a:hover {
      MAIN CONTENT
    ================ */
 
+#restart-app {
+	margin: 1%;
+}
+
 .gif {
 	box-shadow: 0 0 3px 3px #353535;
 	border: 1px solid #fff;
@@ -103,7 +107,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	flex: auto;
-	padding: 5% 5%;
+	padding: 0;
 }
 
 aside {
@@ -140,14 +144,26 @@ article {
          SELFIE
    ================== */
 
+#say-hello {
+	color: #e83e31;
+}
+
+#say-hello a {
+	color: #2b7bb9;
+}
+
+#say-hello a:hover {
+	color: #549cd4;
+}
+
 .selfiearticle {
-	padding: 5% 5% 5% 5%;
+	padding: 20% 0 0 0;
 }
 
 
 .upload-image {
-	margin: 5%;
-    width: 600px;
+	margin: 0;
+    width: 400px;
 }
 
 .upload-image::-webkit-file-upload-button {
@@ -155,7 +171,7 @@ article {
 }
 
 .upload-image::before {
-	content: 'take a selfie';
+	content: 'selfie time';
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
 	color: #fff;
 	display: inline-block;
@@ -170,7 +186,7 @@ article {
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 90px;
+	font-size: 60px;
 }
 
 .upload-image:hover::before {
@@ -199,6 +215,11 @@ article {
 /* ==================
          STATUS
    ================== */
+
+#status {
+	padding: 4%;
+}
+
 
 #tweet-input {
 	padding: 5px;
@@ -269,8 +290,31 @@ select {
 
 
 /* ==================
+         EMBED
+   ================== */
+
+#embed-tweets {
+	margin: 50px 5% 0 5%;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+}
+
+.embed-col {
+	padding: 0 1%;
+	max-width: 33%;
+}
+
+twitterwidget#twitter-widget-0, twitterwidget#twitter-widget-1 {
+	width: 330px !important;
+}
+
+
+/* ==================
          TWEET
    ================== */
+
+
 
 
 #tweet-status {
@@ -279,6 +323,8 @@ select {
 
 
 #tweet-image {
+	margin: 30px 0px;
+    box-shadow: 0 0 28px 8px #777;
 	max-height: 300px;
 }
 
