@@ -18,6 +18,7 @@
   * __platform:__ Cloud Foundry, https://www.cloudfoundry.org/
   * __Cloud Foundry command line interface (CLI):__ https://github.com/cloudfoundry/cli
   * __CF python template app:__ https://github.com/IBM-Bluemix/get-started-python
+  * __CF Buildpack:__ https://github.com/heroku/heroku-buildpack-python.git
 
 ### examples:
 
@@ -95,23 +96,13 @@ in IBM Bluemix CF
   This directory contains old files from Cloud Foundry template, that I did not
   use, and some other support files explained below.
 
-* `./support/daffodils.txt`
-
-  Example file to show how to input text to automate texting from a file. Each
-  line from the file is tweeted every N seconds.
-
-* `./support/retweet_follow.py`, `./singletweet.py/`, `./tweet_textfile.py`
-
-  These are example files that contain only one function for the event that
-  someone wants to make a twitter bot without integration into the cloud.
-
 ### `./templates/`
 
   This contains all the HTML content as rendered with python.  I used one file
   as a base layout which contains the same head, header, sidebar, and footer.
   The main content in the article section changes per GET and POST call.
 
-### `./uploads/`
+### `./static/uploads/`
 
   directory to store uploads from user input
 
