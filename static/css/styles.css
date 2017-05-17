@@ -157,7 +157,7 @@ article {
 }
 
 .selfiearticle {
-	padding: 20% 0 0 0;
+	padding: 20% 10% 0% 10%;
 }
 
 
@@ -186,7 +186,7 @@ article {
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 60px;
+	font-size: 40px;
 }
 
 .upload-image:hover::before {
@@ -294,6 +294,7 @@ select {
    ================== */
 
 #embed-tweets {
+	flex-flow: row wrap;
 	margin: 50px 5% 0 5%;
 	display: flex;
 	flex-direction: row;
@@ -302,7 +303,7 @@ select {
 
 .embed-col {
 	padding: 0 1%;
-	max-width: 33%;
+	max-width: 325px;
 }
 
 twitterwidget#twitter-widget-0, twitterwidget#twitter-widget-1 {
