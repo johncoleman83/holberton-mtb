@@ -37,9 +37,10 @@
 ## description
 
 Demo of how a company could customize mini tweet bot to use for their lobby, an
-event, a promotion, or other public relations campaign.  <strong>Note:</strong>
-This demo is designed to function on an ipad tablet, and therefore does not
-format properly on all devices.
+event, a promotion, or other public relations campaign.  For the original tweet
+bot, check out the link to the 'original' above.  <strong>Note:</strong> This
+demo is designed to function on an ipad tablet, and therefore does not format
+properly on all devices.
 
 ## documentation
 
