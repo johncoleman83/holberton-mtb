@@ -1,4 +1,4 @@
-# <img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/HBTN-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> mini tweet bot
+# <img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/HBTN-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> #helloworld from @holbertonschool
 
 :a python application [DEMO], for twitter automation with Cloud Foundry on IBM Bluemix
 
