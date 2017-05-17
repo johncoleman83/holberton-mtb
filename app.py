@@ -24,7 +24,7 @@ censor = censorship.censor
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
-TWEET_APPEND_TEXT = " -tweeted at @holbertonschool"
+TWEET_APPEND_TEXT = " hello from @holbertonschool!"
 TWEET = [False, False]
 
 # flask integrations
