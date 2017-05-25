@@ -1,4 +1,4 @@
-/*! styles.css v2.1.1 */
+/*! styles.css v2.1.3 */
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
@@ -166,13 +166,13 @@ article {
 }
 
 .selfiearticle {
-	padding: 20% 10% 0% 10%;
+	padding: 40% 10% 0% 10%;
 }
 
 
 .upload-image {
 	margin: 0;
-    width: 400px;
+    width: 250px;
 }
 
 .upload-image::-webkit-file-upload-button {
@@ -184,17 +184,17 @@ article {
 	color: #fff;
 	display: inline-block;
 	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
-	border: 1px solid #696969;
+	border: 1px solid #c1c1c1;
 	border-radius: 3px;
     margin: 0;
-    padding: 30px;
+    padding: 20px;
 	outline: none;
 	white-space: nowrap;
 	-webkit-user-select: none;
 	cursor: pointer;
 	text-shadow: 1px 1px #696969;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 32px;
 }
 
 .upload-image:hover::before {
@@ -303,20 +303,20 @@ select {
 
 #embed-tweets {
 	flex-flow: row wrap;
-	margin: 50px 5% 0 5%;
+	margin: 15px 5% 0 5%;
 	display: flex;
 	flex-direction: row;
 	flex: 1;
 }
 
 .embed-col {
-        margin: 0 auto;
-	padding: 0 1%;
-	max-width: 325px;
+    margin: 0 auto;
+	max-width: 275px;
 }
 
 twitterwidget#twitter-widget-0, twitterwidget#twitter-widget-1 {
-	width: 330px !important;
+	/*	width: 330px !important; */
+	box-shadow: 0 0 4px 4px #fff;
 }
 
 

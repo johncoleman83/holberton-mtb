@@ -169,9 +169,10 @@ tweet_text("this tweet is an example of running a tweet function in python")
 $ python singletweet.py
 ```
 
-### Author
+### Authors
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, check out my website: [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+Carrie Ybay, follow me on github: [@hicarrie](https://github.com/hicarrie)
 
 ### License
 
