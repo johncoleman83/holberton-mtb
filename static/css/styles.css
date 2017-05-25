@@ -180,7 +180,7 @@ article {
 }
 
 .upload-image::before {
-	content: 'selfie time';
+	content: 'take a selfie';
 	color: #fff;
 	display: inline-block;
 	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
