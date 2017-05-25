@@ -28,6 +28,10 @@ bot, check out the link to the 'original' above.  <strong>Note:</strong> This
 demo is designed to function on an ipad tablet, and therefore does not format
 properly on all devices.
 
+## screen shot
+
+<img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/screen-shot.png" width="auto" height="auto" />
+
 ## documentation
 
 For integration with IBM Bluemix, cloudfoundry apps, see the 
