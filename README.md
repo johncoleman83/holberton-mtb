@@ -8,31 +8,17 @@
   * __libraries:__ tweepy, time, multiprocessing, opencv-python, numpy, workzeug
   * __web framework:__ flask
   * __style__: PEP 8: https://www.python.org/dev/peps/pep-0008/
-  	* Note: for python-2.7.10, download the .zip file from the Release v0.0.4 -
-	this older release uses web.py:
-	* https://github.com/johncoleman83/mini-tweet-bot/releases/tag/v0.0.4
 
 ### cloud:
 
   * __infrastructure:__ IBM Bluemix, https://www.ibm.com/cloud-computing/bluemix/
   * __platform:__ Cloud Foundry, https://www.cloudfoundry.org/
-  * __Cloud Foundry command line interface (CLI):__ https://github.com/cloudfoundry/cli
-  * __CF python template app:__ https://github.com/IBM-Bluemix/get-started-python
-  * __CF Buildpack:__ https://github.com/heroku/heroku-buildpack-python.git
 
 ### examples:
 
   * __working app:__ https://holberton-mtb.mybluemix.net/
   * __original app:__ https://mtb.mybluemix.net/
   * __blog:__ http://www.davidjohncoleman.com/2017/mini-tweet-bot/
-
-### twitter:
-
-  * __twitter dev tools:__ https://dev.twitter.com/
-  * __tweet deck:__ https://tweetdeck.twitter.com/
-  * __twitter (bot) account:__ https://twitter.com/are_no_one
-  * __api limits:__ https://support.twitter.com/articles/160385
-  * __best practices:__ https://dev.twitter.com/basics
 
 ## description
 
@@ -171,8 +157,8 @@ $ python singletweet.py
 
 ### Authors
 
-David John Coleman II, check out my website: [davidjohncoleman.com](http://www.davidjohncoleman.com/)
-Carrie Ybay, follow me on github: [@hicarrie](https://github.com/hicarrie)
+* David John Coleman II, check out my website: [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+* Carrie Ybay, follow me on github: [@hicarrie](https://github.com/hicarrie)
 
 ### License
 
