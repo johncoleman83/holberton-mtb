@@ -1,0 +1,398 @@
+/*! styles.css v2.1.1 */
+@charset "UTF-8";
+
+/* ================
+   HTML BODY FORMAT
+   ================ */
+
+
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
+html,
+body,
+article,
+main,
+menu {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+}
+
+input {
+    margin: 3px 0;
+}
+
+/* ========================
+     HEADINGS and FONTS
+   ======================== */
+
+h1, h2, h3, h4, h5, h6, p, a, header, html, form, input, footer, main, body {
+	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+/* Text styles and margins */
+
+p {
+	margin-bottom: 15px;
+}
+h1 {
+	font-size: 36px;
+	margin: 40px 0 20px;
+}
+h2 {
+	font-size: 32px;
+	margin: 30px 0 15px;
+}
+h3 {
+	font-size: 28px;
+	margin: 25px 0 10px;
+}
+h4 {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px 0 10px;
+}
+h5 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0 10px;
+}
+h6 {
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+a {
+	color: #e63c2f;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #980019;
+}
+
+/* ================
+     MAIN CONTENT
+   ================ */
+
+#restart-app {
+	margin: 1%;
+}
+
+.gif {
+	box-shadow: 0 0 3px 3px #353535;
+	border: 1px solid #fff;
+	margin-top: 20px;
+}
+
+
+main {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+	padding: 0;
+}
+
+aside {
+	overflow-y: auto;
+	flex: 1;
+	background: #fff;
+	box-shadow: 0px;
+}
+
+article {
+	flex: 1;
+	overflow-y: auto;
+	text-align: center;
+}
+
+.confirmation p {
+	font-style: italic;
+	color: #0cff00;
+	text-shadow: 1px 1px 1px #353535;
+	font-size: 25px;
+	margin: .5% 10%;
+}
+
+.failure p {
+	font-style: italic;
+	color: #ff0730;
+	text-shadow: 1px 1px 1px #353535;
+	font-size: 25px;
+	margin: .5% 10%;
+}
+
+
+/* ==================
+         SELFIE
+   ================== */
+
+#say-hello {
+	color: #e83e31;
+}
+
+#say-hello a {
+	color: #2b7bb9;
+}
+
+#say-hello a:hover {
+	color: #549cd4;
+}
+
+.selfiearticle {
+	padding: 20% 10% 0% 10%;
+}
+
+
+.upload-image {
+	margin: 0;
+    width: 400px;
+}
+
+.upload-image::-webkit-file-upload-button {
+	visibility: hidden;
+}
+
+.upload-image::before {
+	content: 'selfie time';
+	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+	color: #fff;
+	display: inline-block;
+	background: -webkit-linear-gradient(top, #f3808a, #e83d30);
+	border: 1px solid #696969;
+	border-radius: 3px;
+    margin: 0;
+    padding: 30px;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+	text-shadow: 1px 1px #696969;
+	font-weight: 700;
+	font-size: 40px;
+}
+
+.upload-image:hover::before {
+	border-color: black;
+}
+
+.upload-image:active::before {
+	background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.confirm-image {
+	color: #fff;
+	background: -webkit-linear-gradient(top, #9cc9d8, #339dc3);
+	border: 1px solid #999;
+	border-radius: 3px;
+	padding: 4px;
+	-webkit-user-select: none;
+	cursor: pointer;
+	text-shadow: 1px 1px #696969;
+	box-shadow: 0 0 2px 1px #696969;
+	font-weight: 700;
+	font-size: 16pt;
+}
+
+
+/* ==================
+         STATUS
+   ================== */
+
+#status {
+	padding: 4%;
+}
+
+
+#tweet-input {
+	padding: 5px;
+	border: 1px solid #000;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 4px 0px #353535;
+	width: 90%;
+	font-size: 36px;
+}
+
+.tweetbutton {
+	border-radius: 10px;
+	-webkit-appearance: none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background: #339dc3;
+	padding: 7px 14px;
+	font-weight: bold;
+	font-size: 36px;
+	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	color: #fff;
+	text-decoration: none;
+	border: 1px groove #339dc3;
+}
+
+
+.tweetbutton:hover {
+	background: #2683a5;
+	cursor: pointer;
+}
+
+.retakebutton {
+	border-radius: 10px;
+	-webkit-appearance: none;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background: #339dc3;
+	padding: 7px 14px;
+	font-weight: bold;
+	font-size: 36px;
+	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	color: #fff;
+	text-decoration: none;
+	border: 1px groove #339dc3;
+}
+
+
+.retakebutton:hover {
+	color: white;
+	background: #2683a5;
+	cursor: pointer;
+}
+
+
+.toolbox-button {
+	background: #fff;
+	color: #000;
+	border-radius: 10px;
+	text-decoration: none;
+	border: 1px groove #339dc3;
+	font-size: 30px;
+    margin: 3%;
+}
+
+select {
+	font-size: 30px;
+}
+
+
+/* ==================
+         EMBED
+   ================== */
+
+#embed-tweets {
+	flex-flow: row wrap;
+	margin: 50px 5% 0 5%;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+}
+
+.embed-col {
+	padding: 0 1%;
+	max-width: 325px;
+}
+
+twitterwidget#twitter-widget-0, twitterwidget#twitter-widget-1 {
+	width: 330px !important;
+}
+
+
+/* ==================
+         TWEET
+   ================== */
+
+
+
+
+#tweet-status {
+	font-size: 24px;
+}
+
+
+#tweet-image {
+	margin: 30px 0px;
+    box-shadow: 0 0 28px 8px #777;
+	max-height: 300px;
+}
+
+/* ================
+       FEATURES
+   ================ */
+
+#features {
+	font-size: 24px;
+}
+
+.empty {
+	display: none !important;
+}
+
+#search-input {
+	padding: 5px;
+	border: 1px groove #717171;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 4px 0px #353535;
+	background-color: white;
+	cursor: auto;
+	width: 75%;
+	font-size: 15px;
+}
+
+#features-app {
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px groove #717171;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0px 0px 4px 0px #353535;
+	float: right;
+	margin: 1% 1%;
+	padding: 1% 5%;
+	text-align: left;
+	font-size: 24px;
+}
+
+/* =================
+     MEDIA QUERIES
+   ================= */
+
+
+@media (max-width: 600px) {
+
+
+	html,
+	body,
+	article {
+		-webkit-overflow-scrolling: touch;
+		overflow: scroll;
+		height: 100%;
+		position: relative;
+	}
+
+	main {
+		overflow: scroll;
+	}
+
+	.selfiearticle {
+		padding: 5% 5% 5% 5%;
+	}
+
+	.upload-image::before {
+		font-size: 35px;
+	}
+
+}
