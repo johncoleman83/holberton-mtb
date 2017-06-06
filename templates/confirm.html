@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 <a id="restart-app" href="/">restart app</a><br>
+<script>setTimeout(function(){window.location.href='/'},15000);</script>
 <article id="confirm">
   <a class="twitter-timeline"
 	 style="font-size: 30px"
-	 href="https://twitter.com/djohncoleman"
+	 href="https://twitter.com/are_no_one"
 	 data-height="100%"
 	 data-width="600"
 	 <!--data-tweet-limit="1"-->
-	 >Tweets by djohncoleman</a>
+	 >Tweets by are_no_one</a>
   <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </article>
 {% endblock %}
