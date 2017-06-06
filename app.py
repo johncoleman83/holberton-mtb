@@ -11,7 +11,6 @@ from werkzeug import secure_filename
 from time import sleep
 from credentials import (consumer_key, consumer_secret, access_token,
                          access_token_secret)
-from camera import take_picture
 # custom imports
 import censorship
 from aldict import ascii_dict, leet_dict
@@ -209,7 +208,7 @@ def status():
         if verify_tweet():
             reset_tweet()
             if tweet_image(imagefile, tweetvar):
-                sleep(5)
+                sleep(12)
                 return render_template('confirm.html')
             else:
                 return render_template('failure.html', message='ftweepy')
@@ -232,11 +231,6 @@ def failure():
 @app.route('/confirm')
 def confirm():
     return render_template('confirm.html')
-
-
-@app.route('/are-no-one')
-def easteregg():
-    return render_template('easteregg.html')
 
 
 @app.errorhandler(404)
