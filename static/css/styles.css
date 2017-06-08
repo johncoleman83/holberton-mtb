@@ -1,4 +1,4 @@
-/*! styles.css v2.1.3 */
+/*! styles.css v2.1.4 */
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
@@ -104,7 +104,7 @@ a:hover {
 }
 
 .gif {
-	box-shadow: 0 0 3px 3px #353535;
+	box-shadow: 0 0 28px 8px #777;
 	border: 1px solid #fff;
 	margin-top: 20px;
 }
@@ -319,6 +319,10 @@ twitterwidget#twitter-widget-0, twitterwidget#twitter-widget-1 {
 	box-shadow: 0 0 4px 4px #fff;
 }
 
+.timeline-body {
+	border: 1px solid #e4e3e3;
+	border-radius: 4px;
+}
 
 /* ==================
          TWEET

@@ -49,8 +49,6 @@ def add_date(filename):
 
 
 # begin tweet functions here
-
-
 def tweet_text(tweetvar):
     """ tweets text from input variable """
     try:
@@ -126,8 +124,6 @@ def reset_tweet():
 
 
 # begin flask template rendering
-
-
 @app.route('/features', methods=['GET', 'POST'])
 def features():
     if request.method == 'GET':
@@ -208,8 +204,7 @@ def status():
         if verify_tweet():
             reset_tweet()
             if tweet_image(imagefile, tweetvar):
-                sleep(12)
-                return render_template('confirm.html')
+                return render_template('loader.html')
             else:
                 return render_template('failure.html', message='ftweepy')
         else:
@@ -226,6 +221,11 @@ def confirmfeatures():
 def failure():
     reset_tweet()
     return render_template('failure.html')
+
+
+@app.route('/loader')
+def loader():
+    return render_template('loader.html')
 
 
 @app.route('/confirm')
