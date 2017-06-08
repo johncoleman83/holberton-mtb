@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<script>setTimeout(function(){window.location.href='/confirm'},12000);</script>
+<article id="confirm">
+  <div id="loader">
+	<h1>Please wait while we make your request to twitter...</h1>
+	<img class="gif" src="/static/images/interstellar-libs.gif" />
+  </div>
+</article>
+{% endblock %}
