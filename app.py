@@ -6,7 +6,7 @@ import tweepy
 import os
 import cv2
 import time
-from flask import Flask, render_template, request, jsonify, Markup
+from flask import Flask, render_template, request, Markup, redirect, url_for
 from werkzeug import secure_filename
 from time import sleep
 from credentials import (consumer_key, consumer_secret, access_token,
@@ -135,7 +135,7 @@ def features():
         xfollowers = int(request.form['xfollowers']
                          if request.form['xfollowers'] else 3)
         if not censor(searchterms):
-            return render_template('failure.html', message='fprofanity')
+            return redirect(url_for('failure', message='fprofanity'))
         try:
             if request.form['retweet']:
                 if retweet_follow(searchterms) is not True:
@@ -154,9 +154,9 @@ def features():
         except:
             failcount += 1
         if failcount >= 3:
-            return render_template('failure.html', message='ftweepy')
+            return redirect(url_for('failure', message='ftweepy'))
         else:
-            return render_template('confirmfeature.html', status='success')
+            return redirect(url_for('confirmfeature', status='success'))
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -188,47 +188,47 @@ def index():
 def status():
     if request.method == 'GET':
         reset_tweet()
-        return render_template('status.html')
+        return render_template('status.html', image=None)
     if request.method == 'POST':
         global TWEET, imagefile, tweetvar
         if request.form['tweet']:
             tweetvar = request.form['tweet'] + TWEET_APPEND_TEXT
             if not censor(tweetvar):
                 reset_tweet()
-                return render_template('failure.html', message='fprofanity')
+                return redirect(url_for('failure', message='fprofanity'))
         else:
             tweetvar = TWEET_APPEND_TEXT
             if verify_tweet == False:
-                return render_template('failure.html', message='fprocedure')
+                return redirect(url_for('failure', message='fprocedure'))
         TWEET[1] = True
         if verify_tweet():
             reset_tweet()
             if tweet_image(imagefile, tweetvar):
-                return render_template('loader.html')
+                return redirect(url_for('loader'))
             else:
-                return render_template('failure.html', message='ftweepy')
+                return redirect(url_for('failure', message='ftweepy'))
         else:
             reset_tweet()
-            return render_template('failure.html', message='fprocedure')
+            return redirect(url_for('failure', message='fprocedure'))
 
 
-@app.route('/confirmfeature')
-def confirmfeatures():
-    return render_template('confirmfeature.html')
+@app.route('/confirmfeature/<status>', methods=['GET'])
+def confirmfeature(status):
+    return render_template('confirmfeature.html', status=status)
 
 
-@app.route('/failure')
-def failure():
+@app.route('/failure/<message>', methods=['GET'])
+def failure(message):
     reset_tweet()
-    return render_template('failure.html')
+    return render_template('failure.html', message=message)
 
 
-@app.route('/loader')
+@app.route('/loader', methods=['GET'])
 def loader():
     return render_template('loader.html')
 
 
-@app.route('/confirm')
+@app.route('/confirm', methods=['GET'])
 def confirm():
     return render_template('confirm.html')
 
