@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<script>setTimeout(function(){window.location.href='/'},12000);</script>
 <a id="restart-app" href="/">restart app</a><br>
 {% if message == "fprofanity" %}
 <article class="failure">
@@ -9,7 +10,8 @@
 	unsuccessful <i class="fa fa-frown-o" aria-hidden="true"></i>
   </p>
   <p>please don't use profanity<br>
-	<img class="gif" src="/static/images/censor.gif" />
+	<img class="gif"
+		 src="{{ url_for('static', filename='images/censor.gif') }}">
   </p>
   {% elif message == "ftweepy" %}
   <article class="failure">
@@ -34,7 +36,8 @@
 		  </p>
 		  <p style="font-size:18px;">
 			please follow procedure<br>
-			<img class="gif" src="/static/images/mistake.gif" /></p>
+			<img class="gif"
+				 src="{{ url_for('static', filename='images/mistake.gif') }}" /></p>
 	{% endif %}
 		</article>
 {% endblock %}

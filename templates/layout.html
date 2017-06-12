@@ -6,15 +6,15 @@
 	<!-- meta data -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="icon" href="static/images/hbtn-Favicon-64x64-4x.png"/>
+	<link rel="icon" href="{{ url_for('static', filename='images/hbtn-Favicon-64x64-4x.png') }}">
 
 	<!-- facebook -->
-	<meta property="og:image" content="static/images/HBTN-Bordered-CMYK-Logo-Horizontal-Color-Black@4x.png"/>
-	<meta property="og:url" content="http://holberton-mtb.mybluemix.net/"/>
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="holberton tweets" />
+	<meta property="og:image" content="static/images/HBTN-Bordered-CMYK-Logo-Horizontal-Color-Black@4x.png">
+	<meta property="og:url" content="http://holberton-mtb.mybluemix.net/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="holberton tweets" >
 	<meta property="og:description"
-		  content="holberton mini tweet bot: a demo for twitter automation" />
+		  content="holberton mini tweet bot: a demo for twitter automation">
 
 	<!-- twitter card -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -25,8 +25,10 @@
 	<meta name="twitter:image" content="static/images/HBTN-Bordered-CMYK-Logo-Horizontal-Color-Black@4x.png">
 
 	<!-- css -->
-	<link href="static/css/styles.css?v2.1.4" rel="stylesheet"/>
-	<link href="static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet"
+		  href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet"
+		  href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css') }}">
 
 	<!-- js -->
 	<script src="static/js/behavior.js"></script>
