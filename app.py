@@ -4,7 +4,6 @@ takes user input and tweets to designated account
 """
 import tweepy
 import os
-import cv2
 import time
 from flask import Flask, render_template, request, Markup, redirect, url_for
 from werkzeug import secure_filename
