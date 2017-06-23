@@ -27,7 +27,6 @@ var/
 
 
 # Secrets
-credentials.py
 credentials-djc.py
 vcap-local.json
 
