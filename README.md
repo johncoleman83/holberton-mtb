@@ -107,8 +107,8 @@ $ python singletweet.py
 
 ### Authors
 
-* David John Coleman II, check out my website: [davidjohncoleman.com](http://www.davidjohncoleman.com/)
-* Carrie Ybay, follow me on github: [@hicarrie](https://github.com/hicarrie)
+* David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+* Carrie Ybay, [@hicarrie](https://github.com/hicarrie)
 
 ### License
 
