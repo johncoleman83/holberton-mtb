@@ -112,4 +112,4 @@ $ python singletweet.py
 
 ### License
 
-Public Domain, no copyright protection
+MIT License
