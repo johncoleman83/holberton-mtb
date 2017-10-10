@@ -22,7 +22,7 @@ censor = censorship.censor
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
-TWEET_APPEND_TEXT = " hello from @holbertonschool!"
+TWEET_APPEND_TEXT = " (auto tweet)"
 TWEET = [False, False]
 
 # flask integrations
@@ -101,11 +101,14 @@ def follow_x(searchterms, xfollowers):
 def follow_followers():
     """ follow all your followers """
     for follower in tweepy.Cursor(api.followers).items():
+        are_following = follower.__dict__.get('following')
+        request_sent = follower.__dict__.get('follow_request_sent')
         try:
-            follower.follow()
+            if not are_following and not request_sent:
+                follower.follow()
         except tweepy.TweepError as e:
-                print(e.reason)
-                pass
+            print(e.reason)
+            pass
 
 
 #globals to keep track of user experiences
