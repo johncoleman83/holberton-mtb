@@ -1,4 +1,4 @@
-# <img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/HBTN-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> #helloworld from @holbertonschool
+# <img src="https://github.com/johncoleman83/bootcamp-mtb/blob/master/static/images/BTCP-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> #helloworld from @bootcampschool
 
 :a python application [DEMO], for twitter automation with Cloud Foundry on IBM Bluemix
 
@@ -16,7 +16,7 @@
 
 ### examples:
 
-  * __working app:__ https://holberton-mtb.mybluemix.net/
+  * __working app:__ https://bootcamp-mtb.mybluemix.net/
   * __original app:__ https://mtb.mybluemix.net/
   * __blog:__ http://www.davidjohncoleman.com/2017/mini-tweet-bot/
 
@@ -30,7 +30,7 @@ properly on all devices.
 
 ## screen shot
 
-<img src="https://github.com/johncoleman83/holberton-mtb/blob/master/static/images/screen-shot.png" width="auto" height="auto" />
+<img src="https://github.com/johncoleman83/bootcamp-mtb/blob/master/static/images/screen-shot.png" width="auto" height="auto" />
 
 ## documentation
 
