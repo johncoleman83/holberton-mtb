@@ -1,5 +1,5 @@
 ---
 applications:
- - name: holberton-mtb
+ - name: bootcamp-mtb
    random-route: true
    memory: 128M
