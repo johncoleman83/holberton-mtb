@@ -1,4 +1,4 @@
-# <img src="https://github.com/johncoleman83/bootcamp-mtb/blob/master/static/images/BTCP-Bordered-CMYK-Seahorse-Color-Green%401200ppi.png" width="auto" height="160" /> #helloworld from @bootcampschool
+# mini tweet bot
 
 :a python application [DEMO], for twitter automation with Cloud Foundry on IBM Bluemix
 
@@ -27,10 +27,6 @@ event, a promotion, or other public relations campaign.  For the original tweet
 bot, check out the link to the 'original' above.  <strong>Note:</strong> This
 demo is designed to function on an ipad tablet, and therefore does not format
 properly on all devices.
-
-## screen shot
-
-<img src="https://github.com/johncoleman83/bootcamp-mtb/blob/master/static/images/screen-shot.png" width="auto" height="auto" />
 
 ## documentation
 
